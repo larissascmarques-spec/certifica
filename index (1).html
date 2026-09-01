@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Desafios do Inédito | Mantenha seu Cérebro Ativo</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-page: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --primary-dark: #0F2A2A;
+            --primary-medium: #184E4E;
+            --accent-gold: #D9A036;
+            --accent-gold-hover: #C28E2B;
+            --accent-green: #22C55E;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border-light: #E2E8F0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 25px -5px rgba(15, 42, 42, 0.08), 0 10px 10px -5px rgba(15, 42, 42, 0.04);
+            --shadow-glow: 0 0 25px rgba(217, 160, 54, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            color: #FFFFFF;
+            padding: 60px 0 80px;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(217,160,54,0.1) 0%, rgba(255,255,255,0) 60%);
+            pointer-events: none;
+        }
+
+        .tag-headline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #F1F5F9;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .hero p.lead {
+            font-size: 1.2rem;
+            color: #E2E8F0;
+            max-width: 750px;
+            margin: 0 auto 32px;
+            font-weight: 400;
+        }
+
+        .before-after-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(15, 42, 42, 0.6);
+            border: 1px solid rgba(217, 160, 54, 0.4);
+            padding: 10px 24px;
+            border-radius: 30px;
+            color: #F8FAFC;
+            font-weight: 600;
+            margin-bottom: 36px;
+            font-size: 1.05rem;
+        }
+
+        .before-after-badge span {
+            color: var(--accent-gold);
+        }
+
+        /* --- BUTTONS --- */
+        .cta-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 480px;
+            background: linear-gradient(180deg, #E5AC3F 0%, #C28E2B 100%);
+            color: #0F2A2A;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 22px 36px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-glow), 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(180deg, #F0B749 0%, #D49B31 100%);
+            box-shadow: 0 0 35px rgba(217, 160, 54, 0.5), 0 12px 24px rgba(0,0,0,0.25);
+        }
+
+        .cta-subtext {
+            font-size: 0.85rem;
+            color: #94A3B8;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials-section {
+            padding: 70px 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-50px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            line-height: 1;
+            font-family: serif;
+            opacity: 0.3;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-medium);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 16px;
+        }
+
+        /* --- PAIN SECTION --- */
+        .pain-section {
+            background: #FFF;
+            border-radius: 28px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pain-list {
+            margin: 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pain-item {
+            background: #FEF2F2;
+            border-left: 4px solid #EF4444;
+            padding: 16px 20px;
+            border-radius: 8px;
+            color: #991B1B;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* --- STEPS SECTION --- */
+        .steps-section {
+            padding: 60px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-medium);
+            color: #FFF;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(24, 78, 78, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* --- SCIENCE SECTION --- */
+        .science-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #E6F4EA 100%);
+            border: 1px solid #BBF7D0;
+            border-radius: 28px;
+            padding: 50px 40px;
+            margin: 50px 0;
+        }
+
+        .science-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #166534;
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+        }
+
+        .science-section p {
+            color: #14532D;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .science-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- DELIVERABLES / STACK --- */
+        .deliverables-section {
+            padding: 40px 0;
+        }
+
+        .deliverable-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .deliverable-icon {
+            background: #F1F5F9;
+            color: var(--primary-medium);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .deliverable-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .deliverable-content p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .bonus-badge {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #92400E;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        /* --- AUDIENCE LIST --- */
+        .audience-section {
+            background: var(--bg-card);
+            border-radius: 28px;
+            padding: 50px 40px;
+            margin: 50px 0;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .audience-list {
+            list-style: none;
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .audience-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: #DCFCE7;
+            color: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- OFFER BOX --- */
+        .offer-wrapper {
+            background: var(--bg-card);
+            border: 3px solid var(--accent-gold);
+            border-radius: 32px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-header {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 28px;
+            margin-bottom: 28px;
+        }
+
+        .offer-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .price-table {
+            max-width: 550px;
+            margin: 0 auto 30px;
+            text-align: left;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-light);
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .price-row.total {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding-top: 20px;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .price-tag-container {
+            background: #F8FAFC;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-light);
+        }
+
+        .price-anchor {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .big-price {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin: 10px 0;
+        }
+
+        .big-price span {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* --- AUTHOR SECTION --- */
+        .author-section {
+            background: #F1F5F9;
+            border-radius: 24px;
+            padding: 40px;
+            margin: 50px 0;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-medium);
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .author-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+        }
+
+        .author-info .subtitle {
+            color: var(--accent-gold-hover);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        /* --- OPTIONS SECTION --- */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .option-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--border-light);
+        }
+
+        .option-card.active {
+            border: 2px solid var(--accent-green);
+            background: #F0FDF4;
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            padding: 50px 0;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 20px 24px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-medium);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-dark);
+            color: #94A3B8;
+            padding: 50px 0 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: #CBD5E1;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p.lead { font-size: 1rem; }
+            .cta-btn { font-size: 1.1rem; padding: 18px 24px; }
+            .author-section { flex-direction: column; text-align: center; }
+            .deliverable-card { flex-direction: column; gap: 12px; }
+            .pain-section, .audience-section, .offer-wrapper { padding: 30px 20px; }
+            .big-price { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <span class="tag-headline">Quando foi a última vez que você fez alguma coisa pela primeira vez?</span>
+            
+            <h1>Descubra como tirar seu cérebro do piloto automático em 15 minutos por dia, <span>mesmo que você ache que memória ruim é coisa da idade.</span></h1>
+            
+            <p class="lead">O problema não é esquecer. É começar a esquecer cada vez mais — e o que trava esse caminho não é repetir o de sempre, é fazer o inédito.</p>
+            
+            <div class="before-after-badge">
+                Antes &nbsp;&rarr;&nbsp; <span>Depois</span>
+            </div>
+
+            <div>
+                <a href="#comprar" class="cta-btn">QUERO COMPRAR AGORA &rarr;</a>
+                <div class="cta-subtext">
+                    <span>🔒 Compra 100% Segura</span>
+                    <span>⚡ Acesso Imediato</span>
+                    <span>🛡️ 7 Dias de Garantia</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- DEPOIMENTOS -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>Veja casos de pessoas acima de 60 anos que voltaram a confiar na própria memória usando o 100 DESAFIOS DO INÉDITO</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="quote-icon">“</span>
+                    <p class="testimonial-text">Comecei desenhando com a mão esquerda achando que era bobagem. Duas semanas depois parei de esquecer onde deixava os óculos e o celular.</p>
+                    <div class="testimonial-author">— Vera, 66 anos</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <span class="quote-icon">“</span>
+                    <p class="testimonial-text">O que mais me incomodava era dar branco no meio da conversa. Hoje faço um desafio diferente todo dia e me sinto muito mais rápido.</p>
+                    <div class="testimonial-author">— Antônio, 70 anos</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <span class="quote-icon">“</span>
+                    <p class="testimonial-text">Aprendi a fazer nós de marinheiro aos 63 anos! Minha filha ri, mas eu nunca me senti tão dona de mim.</p>
+                    <div class="testimonial-author">— Cida, 63 anos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DORES / PROBLEMA -->
+        <section class="pain-section">
+            <p style="font-size: 1.15rem; font-weight: 600; color: var(--primary-dark);">Você não aguenta mais viver no automático e sentir que a memória está escapando das suas mãos.</p>
+            
+            <p style="margin-top: 10px; color: var(--text-muted);">Por isso, você pensa:</p>
+
+            <div class="pain-list">
+                <div class="pain-item">“Será que estou ficando esquecido demais para a minha idade?”</div>
+                <div class="pain-item">“Ontem mesmo entrei no quarto e não lembrei o que eu ia buscar.”</div>
+                <div class="pain-item">“Já repeti a mesma pergunta duas vezes e fingi que não percebi.”</div>
+                <div class="pain-item">“Tenho medo de um dia depender dos meus filhos para tudo.”</div>
+            </div>
+
+            <p style="font-size: 1.1rem; font-weight: 600; color: var(--primary-dark);">Eu sei... você não aguenta mais o medo de perder a sua autonomia por causa do esquecimento.</p>
+            <p style="font-size: 1.1rem; color: var(--accent-gold-hover); font-weight: 700; margin-top: 4px;">Estou certo?</p>
+
+            <p style="margin-top: 16px; font-size: 1.05rem;">E se você pudesse manter a mente ativa e independente, sem remédio, sem aplicativo e sem passar horas fazendo exercício de escola?</p>
+        </section>
+
+        <!-- OS 3 PASSOS -->
+        <section class="steps-section">
+            <div class="section-header">
+                <h2>Esses são os 3 passos para manter o seu cérebro fora do automático</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Escolha o desafio do dia</h3>
+                    <p>Abra a apostila e escolha um dos 100 desafios de novidade. Nada de conta de matemática: são tarefas simples que você nunca fez antes.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Faça em 15 minutos</h3>
+                    <p>Escovar os dentes com a outra mão, desenhar sem olhar o papel, ouvir música enquanto monta um quebra-cabeça, decorar uma rota nova.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Marque no calendário</h3>
+                    <p>Risque o dia no calendário de 30 dias. É o hábito da novidade que mantém o cérebro criando novas conexões, e não a repetição do de sempre.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROVA CIENTÍFICA -->
+        <section class="science-section">
+            <h2>Por que a novidade e não a repetição?</h2>
+            <p>O neurobiólogo <strong>Lawrence C. Katz</strong>, da Universidade Duke, criou o conceito de neuróbica no livro <em>“Mantenha seu cérebro vivo”</em>: usar os sentidos de maneira inesperada (como trocar a mão dominante ou se vestir de olhos fechados) estimula o cérebro a produzir novas conexões.</p>
+            <p>O neurocientista <strong>Michael Merzenich</strong>, da UCSF e um dos pais da neuroplasticidade, mostra que o cérebro adulto continua se reorganizando a vida inteira — mas só quando é desafiado com algo novo e difícil, não com o que já faz no automático.</p>
+            <p>É o mesmo achado do estudo <strong>Synapse Project (Park et al., Psychological Science, 2014)</strong>: idosos que passaram meses aprendendo habilidades novas — como fotografia digital e costura — melhoraram a memória; os que só socializaram ou fizeram atividades já conhecidas, não.</p>
+        </section>
+
+        <!-- O QUE VAI RECEBER -->
+        <section class="deliverables-section">
+            <div class="section-header">
+                <h2>Veja tudo que você vai receber com o 100 DESAFIOS DO INÉDITO</h2>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">📘</div>
+                <div class="deliverable-content">
+                    <h3>APOSTILA — 100 DESAFIOS INÉDITOS PARA ATIVAR SEU CÉREBRO EM 15 MINUTOS POR DIA</h3>
+                    <p>100 tarefas de novidade, uma para cada dia, organizadas por nível. São ações rápidas e simples que tornam impossível o seu cérebro continuar no automático.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">✏️</div>
+                <div class="deliverable-content">
+                    <h3>Caderno de Treino da Mão Trocada</h3>
+                    <p>Passo a passo para escrever, desenhar e comer usando a mão não dominante — o exercício mais simples para forçar o cérebro a criar novos caminhos.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">⏱️</div>
+                <div class="deliverable-content">
+                    <h3>GUIA DOS 15 MINUTOS POR DIA</h3>
+                    <p>Guia completo com uma rotina curta para aplicar ainda hoje, sem que você precise de computador, aplicativo ou ajuda de ninguém.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">⚠️</div>
+                <div class="deliverable-content">
+                    <h3>Lista dos 7 erros que deixam seu cérebro no automático</h3>
+                    <p>Os 7 hábitos repetitivos mais comuns que fazem você acordar, viver o dia inteiro e não lembrar de quase nada do que aconteceu.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; margin-bottom: 20px;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary-dark);">Ainda não acabou</h3>
+                <p style="color: var(--text-muted);">Você também vai receber...</p>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">🎁</div>
+                <div class="deliverable-content">
+                    <span class="bonus-badge">Bônus Especial</span>
+                    <h3>Manual da Mente Desperta</h3>
+                    <p>Dicas práticas e exercícios rápidos para prestar mais atenção no dia a dia e nunca mais chegar em casa sem lembrar do caminho que fez.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">📅</div>
+                <div class="deliverable-content">
+                    <span class="bonus-badge">Bônus Especial</span>
+                    <h3>Calendário 30 Dias de Novidade</h3>
+                    <p>Programação diária completa para você fazer uma coisa inédita por dia durante um mês inteiro, com espaço para marcar cada conquista.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card">
+                <div class="deliverable-icon">🛡️</div>
+                <div class="deliverable-content">
+                    <span class="bonus-badge">Bônus Especial</span>
+                    <h3>Protocolo Anti-Branco</h3>
+                    <p>Passo a passo prático para lembrar nomes, recados e compromissos, mesmo que você já tenha desistido de anotar tudo em papelzinho.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARA QUEM É -->
+        <section class="audience-section">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-dark);">O 100 DESAFIOS DO INÉDITO é para você que:</h2>
+            
+            <ul class="audience-list">
+                <li><span class="check-icon">✓</span> Quer continuar independente, dirigindo, cozinhando e cuidando das suas coisas sozinho</li>
+                <li><span class="check-icon">✓</span> Já se assustou ao esquecer onde colocou a chave, o remédio ou o cartão do banco</li>
+                <li><span class="check-icon">✓</span> Sente que perde o fio da conversa e evita falar em grupo com medo de dar branco</li>
+                <li><span class="check-icon">✓</span> Já gastou dinheiro com vitamina para memória e não sentiu diferença nenhuma</li>
+                <li><span class="check-icon">✓</span> Quer lembrar das coisas com mais facilidade e recuperar a confiança para conversar</li>
+                <li><span class="check-icon">✓</span> Tem mais de 60 anos e quer manter a mente ativa sem depender de aplicativo ou celular</li>
+            </ul>
+
+            <p style="margin-top: 30px; font-weight: 700; color: var(--primary-medium); font-size: 1.1rem; text-align: center;">Enfim... se você quer envelhecer com a mente ativa e sem depender de ninguém, o 100 DESAFIOS DO INÉDITO é para você!</p>
+        </section>
+
+        <!-- CAIXA DE OFERTA PRINCIPAL -->
+        <section class="offer-wrapper" id="comprar">
+            <div class="offer-header">
+                <h2>Recapitulando: tudo que você recebe no 100 DESAFIOS DO INÉDITO</h2>
+            </div>
+
+            <div class="price-table">
+                <div class="price-row">
+                    <span>APOSTILA — 100 Desafios do Inédito</span>
+                    <span class="strikethrough">R$ 147,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Caderno de Treino da Mão Trocada</span>
+                    <span class="strikethrough">R$ 147,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Guia dos 15 Minutos por Dia</span>
+                    <span class="strikethrough">R$ 147,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Lista dos 7 Erros do Cérebro no Automático</span>
+                    <span class="strikethrough">R$ 147,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Bônus: Manual da Mente Desperta + Calendário 30 Dias + Protocolo Anti-Branco</span>
+                    <span class="strikethrough">R$ 147,00</span>
+                </div>
+                <div class="price-row total">
+                    <span>Tudo isso deveria custar</span>
+                    <span class="strikethrough" style="color: #EF4444;">R$ 735,00</span>
+                </div>
+            </div>
+
+            <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px;">Mas somente hoje você pode acessar o 100 DESAFIOS DO INÉDITO por um valor muito mais acessível.</p>
+
+            <div class="price-tag-container">
+                <span class="price-anchor">Por apenas</span>
+                <div class="big-price">9x <span>de</span> 8,80</div>
+                <p style="font-weight: 600; color: var(--text-dark);">ou 67,00 à vista</p>
+            </div>
+
+            <a href="#" class="cta-btn">QUERO COMPRAR AGORA &rarr;</a>
+
+            <div class="cta-subtext" style="margin-top: 20px;">
+                <span>🔒 Compra 100% segura</span>
+                <span>⚡ Acesso imediato</span>
+                <span>🛡️ 7 dias de garantia</span>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section style="text-align: center; margin: 60px 0;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 30px;">Compre agora e receba seu acesso no e-mail imediatamente!</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <div style="background: #FFF; padding: 30px 20px; border-radius: 16px; border: 1px solid var(--border-light);">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">1</div>
+                    <h4 style="color: var(--primary-dark); margin-bottom: 8px;">Faça sua compra</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Escolha a forma de pagamento e finalize.</p>
+                </div>
+
+                <div style="background: #FFF; padding: 30px 20px; border-radius: 16px; border: 1px solid var(--border-light);">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">2</div>
+                    <h4 style="color: var(--primary-dark); margin-bottom: 8px;">Receba o e-mail</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">O acesso chega na sua caixa de entrada.</p>
+                </div>
+
+                <div style="background: #FFF; padding: 30px 20px; border-radius: 16px; border: 1px solid var(--border-light);">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">3</div>
+                    <h4 style="color: var(--primary-dark); margin-bottom: 8px;">Baixe e imprima</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Comece o primeiro desafio hoje mesmo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUTOR -->
+        <section class="author-section">
+            <div class="author-avatar">SDI</div>
+            <div class="author-info">
+                <h3>SEU NOME</h3>
+                <div class="subtitle">Criador do 100 DESAFIOS DO INÉDITO</div>
+                <p style="color: var(--text-dark); font-size: 1rem;">Depois de ver minha própria mãe repetir a mesma pergunta três vezes na mesma tarde, mergulhei nos estudos de neuroplasticidade e descobri uma coisa simples: o cérebro não enfraquece por causa da idade, ele enfraquece por causa da rotina. Foi assim que nasceram os 100 desafios que já ajudaram milhares de pessoas acima de 60 anos a sair do automático.</p>
+            </div>
+        </section>
+
+        <!-- OPÇÕES -->
+        <section style="margin: 60px 0;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: var(--primary-dark); margin-bottom: 24px;">Agora você tem duas opções:</h2>
+
+            <div class="options-grid">
+                <div class="option-card">
+                    <h4 style="color: #991B1B; margin-bottom: 8px;">Opção 1</h4>
+                    <p style="color: var(--text-muted); font-size: 0.98rem;">Continuar repetindo os mesmos dias, esquecendo cada vez mais e convivendo com o medo de perder a sua independência.</p>
+                </div>
+
+                <div class="option-card active">
+                    <h4 style="color: var(--accent-green); margin-bottom: 8px;">Opção 2</h4>
+                    <p style="color: var(--text-dark); font-weight: 500; font-size: 0.98rem;">Acessar o 100 DESAFIOS DO INÉDITO e treinar a mente com uma experiência nova por dia, em apenas 15 minutos.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 1.1rem; margin: 24px 0; color: var(--primary-dark);">Eu sei (e você também sabe): a opção 2 é a mais inteligente. Clique no botão abaixo e acesse agora mesmo o 100 DESAFIOS DO INÉDITO.</p>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-weight: 600;">Por apenas</p>
+                <div class="big-price" style="font-size: 2.8rem; margin: 4px 0;">9x <span>de</span> 8,80</div>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">ou 67,00 à vista</p>
+
+                <a href="#comprar" class="cta-btn">QUERO COMPRAR AGORA &rarr;</a>
+                <div class="cta-subtext" style="margin-top: 16px;">
+                    <span>🔒 Compra 100% segura</span>
+                    <span>⚡ Acesso imediato</span>
+                    <span>🛡️ 7 dias de garantia</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: var(--primary-dark);">Perguntas Frequentes</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">Como eu recebo o material? <span>+</span></div>
+                <div class="faq-item">Por quanto tempo tenho acesso? <span>+</span></div>
+                <div class="faq-item">Serve para quem não entende de computador? <span>+</span></div>
+                <div class="faq-item">Preciso mesmo de 15 minutos por dia? <span>+</span></div>
+                <div class="faq-item">E se eu não gostar? <span>+</span></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="#">Termos de uso</a> • <a href="#">Política de privacidade</a> • <a href="#">Disclaimer</a></p>
+            <p>Copyright © Desafios do Inédito — 2026. Todos os direitos reservados.</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; max-width: 700px; margin: 16px auto 0;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Este material é educativo, não substitui avaliação médica e não garante nenhum tipo de resultado.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
